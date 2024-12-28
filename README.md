@@ -28,7 +28,13 @@ mamba env create -f workflow/envs/env.yaml
 mamba activate azure-test
 ```
 
-5. Run the pipeline
+5. Log in to Azure account using azure-cli
+
+```
+az login --tenant <name>
+```
+
+6. Run the pipeline
 
 ```
 bash run.sh
