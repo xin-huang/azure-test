@@ -60,3 +60,6 @@ cd workflow
 snakemake --jobs 3 -rpf --verbose --default-remote-prefix $AZ_BLOB_PREFIX --use-conda --default-remote-provider AzBlob --envvars AZ_BLOB_ACCOUNT_URL --az-batch --container-image  huangxlab/lai-image --az-batch-account-url $AZ_BATCH_ACCOUNT_URL
 
 az storage blob download --account-name $stgacct --container-name $ctname --name results/plots/b1.scores.png --file b1.scores.png
+
+# clean files in blob storage
+az storage blob delete-batch --account-name $stgacct --source $ctname
